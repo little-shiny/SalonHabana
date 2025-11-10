@@ -5,10 +5,10 @@
 package GUI;
 
 import javax.swing.JOptionPane;
-
 /**
+ * JPanel que se utilizará para introducir los datos de la reserva
  *
- * @author mim0x
+ * @author Cristina García Quintero
  */
 public class PanelPantallaReserva extends javax.swing.JPanel {
 
@@ -21,10 +21,13 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
     
     /**
      * Constructor donde recibimos la referencia a la ventana de inicio
-     * - Parent hace referencia a la ventana principal que está en ejecución y permite utilizar sus metodos y clases
-     * @param parent 
+     * Parent hace referencia a la ventana principal que está en ejecución y permite utilizar sus metodos y clases
+     *
+     * <p>También se establecen los listeners de los botones que permiten volver al menú y actualizar el panel
+     * dinámico</p>
+     * @param parent package GUI;
      */
-    // Nuevo constructor donde recibimos la referencia al frame principal
+
     public PanelPantallaReserva(VentanaPrincipal parent) {
         initComponents();
         
@@ -52,7 +55,7 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
     }
     /**
      * Método que evalúa la coincidencia con el elemento seleccionado en el comboBox para mostrar el panel dinámico si coincide con "Congreso"
-     * @param evento 
+     * @param evento Dato recogido del comboBox
      */
     private void ActualizarPanelDinamico(String evento){
         if ("Congreso".equals(evento)){

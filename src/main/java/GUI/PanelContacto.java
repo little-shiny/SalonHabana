@@ -1,13 +1,13 @@
 package GUI;
-
 /**
+ * JPanel que se utilizará para establecer la información de contacto con la empresa BK
  *
  * @author Cristina García Quintero
  */
 public class PanelContacto extends javax.swing.JPanel {
 
     /**
-     * Creates new form PanelContacto
+     * Constructor genérico para iniciar los componentes del panel
      */
     public PanelContacto() {
         initComponents();
@@ -15,10 +15,9 @@ public class PanelContacto extends javax.swing.JPanel {
     
     /**
      * Constructor donde recibimos la referencia a la ventana de inicio
-     * - Parent hace referencia a la ventana principal que está en ejecución y permite utilizar sus metodos y clases
-     * @param parent 
+     * "Parent" hace referencia a la ventana principal que está en ejecución y permite utilizar sus métodos y clases
+     * @param parent Ventana principal en ejecución
      */
-    // Nuevo constructor donde recibimos la referencia al frame principal
     public PanelContacto(VentanaPrincipal parent) {
         initComponents();
         

@@ -1,17 +1,14 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package GUI;
-
 /**
+ * JPanel que se utilizará como pantalla principal o "inicio".
+ * <p>Contiene los botones de navegación a las diferentes pantallas</p>
  *
- * @author mim0x
+ * @author Cristina García Quintero
  */
 public class PanelInicio extends javax.swing.JPanel {
 
     /**
-     * Constructor generico PanelInicio
+     * Constructor genérico PanelInicio
      */
     public PanelInicio() {
         initComponents();
@@ -19,8 +16,8 @@ public class PanelInicio extends javax.swing.JPanel {
     
     /**
      * Constructor donde recibimos la referencia a la ventana de inicio
-     * - Parent hace referencia a la ventana principal que está en ejecución y permite utilizar sus metodos y clases
-     * @param parent 
+     * Parent hace referencia a la ventana principal que está en ejecución y permite utilizar sus metodos y clases
+     * @param parent Ventana en ejecución
      */
     // Nuevo constructor donde recibimos la referencia al frame principal
     public PanelInicio(VentanaPrincipal parent) {

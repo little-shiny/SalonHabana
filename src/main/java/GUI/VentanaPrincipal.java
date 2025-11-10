@@ -4,7 +4,8 @@ import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
- * Clase que permite crear la ventana donde aparecerán las diferentes pantallas del programa
+ * Clase que permite crear el "marco" donde aparecerán las diferentes pantallas del programa.
+ * <p>Se utiliza cardLayout para hacer la transición</p>
  * @author Cristina García Quintero
  */
 
@@ -15,7 +16,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private static CardLayout cardLayout;
 
     /**
-     * Genera la ventana de nuestra aplicacion
+     * Constructor que inicializa el marco principal de la aplicación
+     * <p> También inicia el cardLayout que nos sirve para cambiar entre JPanels</p>
+     * JPanels
      */
     public VentanaPrincipal() {
         initComponents();
