@@ -58,10 +58,12 @@ public class PanelInicio extends javax.swing.JPanel {
         textoTitulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         textoTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textoTitulo.setText("Reserva de espacios y salones BK");
+        textoTitulo.setToolTipText("Reserve su salón para eventos");
         textoTitulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         btnReserva.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnReserva.setText("Reserva el salón \"Habana\"");
+        btnReserva.setToolTipText("Haga click para reservar este salón");
         btnReserva.setAlignmentY(1.0F);
         btnReserva.setAutoscrolls(true);
         btnReserva.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -73,6 +75,7 @@ public class PanelInicio extends javax.swing.JPanel {
 
         btnContacto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnContacto.setText("Contacta con nosotros");
+        btnContacto.setToolTipText("Información de contacto");
         btnContacto.setAlignmentY(1.0F);
         btnContacto.setAutoscrolls(true);
         btnContacto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);

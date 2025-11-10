@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author mim0x
@@ -26,13 +28,38 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
     public PanelPantallaReserva(VentanaPrincipal parent) {
         initComponents();
         
+        PanelDinamico.setVisible(false); //Por defecto el panel dinámico no se ve
+        
         // Añadimos el listener del botón aquí para asegurar que se liga a la instancia que se muestra
         btnVolverInicio.addActionListener(e -> {
-            System.out.println("Botón Ir a pantalla de inicio"); // prueba
             parent.cambiarPantalla("Inicio");
         });
-    }
+        
+        // Creamos el listener del ComboBox para actualizar el panel dinámico y mostrar las opciones en función del tipo de evento seleccionado
+        ComboEvento.addActionListener(e -> {
+            String seleccion = (String) ComboEvento.getSelectedItem();
+            ActualizarPanelDinamico(seleccion);
+        });
+        
+        //Listener para el botón de enviar la reserva. Muestra un mensaje para el usuario
+        btnAceptar.addActionListener(e -> {
+            JOptionPane.showMessageDialog(this, "Solicitud de reserva enviada");
+            parent.cambiarPantalla("Inicio");
+        });
+                
+        
 
+    }
+    /**
+     * Método que evalúa la coincidencia con el elemento seleccionado en el comboBox para mostrar el panel dinámico si coincide con "Congreso"
+     * @param evento 
+     */
+    private void ActualizarPanelDinamico(String evento){
+        if ("Congreso".equals(evento)){
+            PanelDinamico.setVisible(true);
+        }
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -42,7 +69,38 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnGpCocina = new javax.swing.ButtonGroup();
         btnVolverInicio = new javax.swing.JButton();
+        Titulo = new javax.swing.JLabel();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        tabInfoPersonal = new javax.swing.JPanel();
+        LabelNombre = new javax.swing.JLabel();
+        LabelTlf = new javax.swing.JLabel();
+        FieldNombre = new javax.swing.JTextField();
+        FieldTlf = new javax.swing.JTextField();
+        tabEvento = new javax.swing.JPanel();
+        SpinnerFecha = new javax.swing.JSpinner();
+        LabelFecha = new javax.swing.JLabel();
+        ComboEvento = new javax.swing.JComboBox<>();
+        LabelEvento = new javax.swing.JLabel();
+        LabelAsistentes = new javax.swing.JLabel();
+        FieldAsistentes = new javax.swing.JTextField();
+        LabelCocina = new javax.swing.JLabel();
+        RaidBtnBufe = new javax.swing.JRadioButton();
+        RaidBtnCarta = new javax.swing.JRadioButton();
+        RaidBtnCitaChef = new javax.swing.JRadioButton();
+        RaidBtnNoPrecisa = new javax.swing.JRadioButton();
+        PanelDinamico = new javax.swing.JPanel();
+        LabelJornadas = new javax.swing.JLabel();
+        CheckboxHab = new javax.swing.JCheckBox();
+        LabelJornadas1 = new javax.swing.JLabel();
+        LabelOpc = new javax.swing.JLabel();
+        SpinnerJornadas = new javax.swing.JSpinner();
+        btnAceptar = new javax.swing.JButton();
+
+        setMinimumSize(new java.awt.Dimension(680, 520));
+        setName(""); // NOI18N
+        setPreferredSize(new java.awt.Dimension(680, 520));
 
         btnVolverInicio.setText("Volver al inicio");
         btnVolverInicio.addActionListener(new java.awt.event.ActionListener() {
@@ -51,29 +109,325 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
             }
         });
 
+        Titulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        Titulo.setText("Salón Habana");
+        Titulo.setAlignmentX(1.0F);
+
+        jTabbedPane1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+
+        tabInfoPersonal.setToolTipText("Información personal de la persona solicitante");
+        tabInfoPersonal.setFocusCycleRoot(true);
+
+        LabelNombre.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LabelNombre.setText("Nombre y apellidos:");
+
+        LabelTlf.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LabelTlf.setText("Teléfono de contacto:");
+
+        FieldNombre.setToolTipText("Introduzca el texto aquí");
+        FieldNombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FieldNombreActionPerformed(evt);
+            }
+        });
+
+        FieldTlf.setToolTipText("Introduzca el texto aquí");
+        FieldTlf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FieldTlfActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout tabInfoPersonalLayout = new javax.swing.GroupLayout(tabInfoPersonal);
+        tabInfoPersonal.setLayout(tabInfoPersonalLayout);
+        tabInfoPersonalLayout.setHorizontalGroup(
+            tabInfoPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabInfoPersonalLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(tabInfoPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(LabelNombre)
+                    .addComponent(LabelTlf))
+                .addGap(26, 26, 26)
+                .addGroup(tabInfoPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FieldTlf, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(188, Short.MAX_VALUE))
+        );
+        tabInfoPersonalLayout.setVerticalGroup(
+            tabInfoPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabInfoPersonalLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addGroup(tabInfoPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelNombre)
+                    .addComponent(FieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(tabInfoPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelTlf)
+                    .addComponent(FieldTlf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(193, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Información personal", null, tabInfoPersonal, "");
+
+        tabEvento.setToolTipText("Información sobre la reserva");
+
+        SpinnerFecha.setModel(new javax.swing.SpinnerDateModel());
+        SpinnerFecha.setToolTipText("Introduzca la fecha y la hora deseada de inicio del evento");
+
+        LabelFecha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelFecha.setText("Fecha del evento: ");
+
+        ComboEvento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banquete", "Jornada", "Congreso" }));
+        ComboEvento.setToolTipText("Especifique el tipo de evento que desee");
+        ComboEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ComboEventoActionPerformed(evt);
+            }
+        });
+
+        LabelEvento.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelEvento.setText("Tipo de evento: ");
+
+        LabelAsistentes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelAsistentes.setText("Número de asistentes: ");
+
+        FieldAsistentes.setToolTipText("Introduzca el número de asistentes al evento");
+
+        LabelCocina.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelCocina.setText("Tipo de cocina:");
+
+        btnGpCocina.add(RaidBtnBufe);
+        RaidBtnBufe.setText("Bufé");
+        RaidBtnBufe.setToolTipText("Opción de bufé para todos los asistentes");
+        RaidBtnBufe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                RaidBtnBufeActionPerformed(evt);
+            }
+        });
+
+        btnGpCocina.add(RaidBtnCarta);
+        RaidBtnCarta.setText("Carta");
+        RaidBtnCarta.setToolTipText("Opción de carta para todos los asistentes");
+
+        btnGpCocina.add(RaidBtnCitaChef);
+        RaidBtnCitaChef.setText("Cita con el chef");
+        RaidBtnCitaChef.setToolTipText("Cita con el chef");
+
+        btnGpCocina.add(RaidBtnNoPrecisa);
+        RaidBtnNoPrecisa.setText("No precisa");
+        RaidBtnNoPrecisa.setToolTipText("Sin opción de cocina");
+
+        LabelJornadas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelJornadas.setText("¿Se requieren habitaciones?");
+
+        CheckboxHab.setToolTipText("Especifique si se necesitan habitaciones para el evento");
+        CheckboxHab.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CheckboxHabActionPerformed(evt);
+            }
+        });
+
+        LabelJornadas1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelJornadas1.setText("Número de jornadas: ");
+
+        LabelOpc.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        LabelOpc.setText("Opciones adicionales para congresos");
+
+        SpinnerJornadas.setModel(new javax.swing.SpinnerNumberModel(1, 1, 30, 1));
+
+        javax.swing.GroupLayout PanelDinamicoLayout = new javax.swing.GroupLayout(PanelDinamico);
+        PanelDinamico.setLayout(PanelDinamicoLayout);
+        PanelDinamicoLayout.setHorizontalGroup(
+            PanelDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PanelDinamicoLayout.createSequentialGroup()
+                .addGroup(PanelDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(PanelDinamicoLayout.createSequentialGroup()
+                        .addComponent(LabelJornadas)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CheckboxHab))
+                    .addGroup(PanelDinamicoLayout.createSequentialGroup()
+                        .addComponent(LabelJornadas1)
+                        .addGap(18, 18, 18)
+                        .addComponent(SpinnerJornadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(LabelOpc, javax.swing.GroupLayout.PREFERRED_SIZE, 249, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        PanelDinamicoLayout.setVerticalGroup(
+            PanelDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PanelDinamicoLayout.createSequentialGroup()
+                .addContainerGap(42, Short.MAX_VALUE)
+                .addComponent(LabelOpc)
+                .addGap(18, 18, 18)
+                .addGroup(PanelDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(CheckboxHab)
+                    .addComponent(LabelJornadas))
+                .addGap(38, 38, 38)
+                .addGroup(PanelDinamicoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelJornadas1)
+                    .addComponent(SpinnerJornadas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41))
+        );
+
+        javax.swing.GroupLayout tabEventoLayout = new javax.swing.GroupLayout(tabEvento);
+        tabEvento.setLayout(tabEventoLayout);
+        tabEventoLayout.setHorizontalGroup(
+            tabEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabEventoLayout.createSequentialGroup()
+                .addGap(68, 68, 68)
+                .addGroup(tabEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(tabEventoLayout.createSequentialGroup()
+                        .addGroup(tabEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LabelFecha)
+                            .addComponent(LabelAsistentes))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(tabEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(SpinnerFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FieldAsistentes, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(23, 23, 23)
+                        .addGroup(tabEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LabelEvento)
+                            .addComponent(LabelCocina)))
+                    .addComponent(PanelDinamico, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addGroup(tabEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(RaidBtnNoPrecisa)
+                    .addComponent(RaidBtnCitaChef)
+                    .addComponent(RaidBtnCarta)
+                    .addComponent(RaidBtnBufe)
+                    .addComponent(ComboEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(50, Short.MAX_VALUE))
+        );
+        tabEventoLayout.setVerticalGroup(
+            tabEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tabEventoLayout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(tabEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelFecha)
+                    .addComponent(SpinnerFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ComboEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelEvento))
+                .addGap(18, 18, 18)
+                .addGroup(tabEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(LabelAsistentes)
+                    .addComponent(FieldAsistentes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelCocina)
+                    .addComponent(RaidBtnBufe))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(tabEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(tabEventoLayout.createSequentialGroup()
+                        .addComponent(RaidBtnCarta)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RaidBtnCitaChef)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(RaidBtnNoPrecisa))
+                    .addGroup(tabEventoLayout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(PanelDinamico, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Peticiones para la reserva", null, tabEvento, "Datos e la reserva del salón");
+
+        btnAceptar.setText("Aceptar y enviar solicitud de reserva");
+        btnAceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAceptarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap(28, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 624, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(28, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btnAceptar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(229, 229, 229)
+                .addComponent(Titulo)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnVolverInicio)
-                .addContainerGap(287, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(btnVolverInicio)
-                .addContainerGap(271, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnAceptar)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnVolverInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverInicioActionPerformed
     }//GEN-LAST:event_btnVolverInicioActionPerformed
 
+    private void FieldNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldNombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldNombreActionPerformed
+
+    private void FieldTlfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FieldTlfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FieldTlfActionPerformed
+
+    private void btnAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAceptarActionPerformed
+
+    }//GEN-LAST:event_btnAceptarActionPerformed
+
+    private void CheckboxHabActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CheckboxHabActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CheckboxHabActionPerformed
+
+    private void RaidBtnBufeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RaidBtnBufeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RaidBtnBufeActionPerformed
+
+    private void ComboEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ComboEventoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ComboEventoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox CheckboxHab;
+    private javax.swing.JComboBox<String> ComboEvento;
+    private javax.swing.JTextField FieldAsistentes;
+    private javax.swing.JTextField FieldNombre;
+    private javax.swing.JTextField FieldTlf;
+    private javax.swing.JLabel LabelAsistentes;
+    private javax.swing.JLabel LabelCocina;
+    private javax.swing.JLabel LabelEvento;
+    private javax.swing.JLabel LabelFecha;
+    private javax.swing.JLabel LabelJornadas;
+    private javax.swing.JLabel LabelJornadas1;
+    private javax.swing.JLabel LabelNombre;
+    private javax.swing.JLabel LabelOpc;
+    private javax.swing.JLabel LabelTlf;
+    private javax.swing.JPanel PanelDinamico;
+    private javax.swing.JRadioButton RaidBtnBufe;
+    private javax.swing.JRadioButton RaidBtnCarta;
+    private javax.swing.JRadioButton RaidBtnCitaChef;
+    private javax.swing.JRadioButton RaidBtnNoPrecisa;
+    private javax.swing.JSpinner SpinnerFecha;
+    private javax.swing.JSpinner SpinnerJornadas;
+    private javax.swing.JLabel Titulo;
+    private javax.swing.JButton btnAceptar;
+    private javax.swing.ButtonGroup btnGpCocina;
     private javax.swing.JButton btnVolverInicio;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel tabEvento;
+    private javax.swing.JPanel tabInfoPersonal;
     // End of variables declaration//GEN-END:variables
 }

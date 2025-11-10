@@ -58,7 +58,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BK Reservas");
-        setMinimumSize(new java.awt.Dimension(660, 400));
+        setMinimumSize(new java.awt.Dimension(680, 550));
+        setPreferredSize(new java.awt.Dimension(680, 550));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
