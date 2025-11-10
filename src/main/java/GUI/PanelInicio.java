@@ -31,6 +31,11 @@ public class PanelInicio extends javax.swing.JPanel {
             System.out.println("Botón Ir a pantalla reserva"); // prueba
             parent.cambiarPantalla("Reservar");
         });
+        
+        btnContacto.addActionListener(e -> {
+            System.out.println("Botón Ir contacto"); // prueba
+            parent.cambiarPantalla("Contacto");
+        });
     }
 
     /**
@@ -46,11 +51,20 @@ public class PanelInicio extends javax.swing.JPanel {
         btnReserva = new javax.swing.JButton();
         btnContacto = new javax.swing.JButton();
 
+        setMinimumSize(new java.awt.Dimension(100, 100));
+        setPreferredSize(new java.awt.Dimension(300, 300));
+        setVerifyInputWhenFocusTarget(false);
+
         textoTitulo.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        textoTitulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         textoTitulo.setText("Reserva de espacios y salones BK");
+        textoTitulo.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         btnReserva.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnReserva.setText("Reserva el salón \"Habana\"");
+        btnReserva.setAlignmentY(1.0F);
+        btnReserva.setAutoscrolls(true);
+        btnReserva.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnReserva.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnReservaActionPerformed(evt);
@@ -59,6 +73,9 @@ public class PanelInicio extends javax.swing.JPanel {
 
         btnContacto.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         btnContacto.setText("Contacta con nosotros");
+        btnContacto.setAlignmentY(1.0F);
+        btnContacto.setAutoscrolls(true);
+        btnContacto.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnContacto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnContactoActionPerformed(evt);
@@ -70,27 +87,25 @@ public class PanelInicio extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(0, 67, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(textoTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(btnReserva)
+                        .addComponent(btnReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 206, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnContacto, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(textoTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 387, Short.MAX_VALUE)
-                        .addGap(81, 81, 81))))
+                        .addComponent(btnContacto)))
+                .addGap(52, 52, 52))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addComponent(textoTitulo, javax.swing.GroupLayout.DEFAULT_SIZE, 71, Short.MAX_VALUE)
-                .addGap(49, 49, 49)
+                .addGap(70, 70, 70)
+                .addComponent(textoTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnContacto, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(95, 95, 95))
+                    .addComponent(btnReserva, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnContacto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(81, 81, 81))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -99,7 +114,7 @@ public class PanelInicio extends javax.swing.JPanel {
     }//GEN-LAST:event_btnReservaActionPerformed
 
     private void btnContactoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnContactoActionPerformed
-        // TODO add your handling code here:
+            // TODO add your handling code here:
     }//GEN-LAST:event_btnContactoActionPerformed
 
 

@@ -1,16 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package GUI;
 
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
 /**
- *
- * @author mim0x
+ * Clase que permite crear la ventana donde aparecerán las diferentes pantallas del programa
+ * @author Cristina García Quintero
  */
+
 public class VentanaPrincipal extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName());
@@ -33,16 +30,16 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // Añadimos las "Pantallas" o paneles
         panelContenedor.add(new PanelInicio(this), "Inicio");
         panelContenedor.add(new PanelPantallaReserva(this),"Reservar");
+        panelContenedor.add(new PanelContacto(this), "Contacto");
         
         // Añadimos el contenedor al Jframe
         this.setContentPane(panelContenedor);
         
         // Mostrar la primera pantalla
-        cardLayout.show(panelContenedor, "inicio");
+        cardLayout.show(panelContenedor, "Inicio");
     }
-    
     /**
-     * método estatico para cambiar de ventana
+     * método para cambiar de ventana
      * @param nombrePantalla nombre de la pantalla a la que se quiere cambiar
      */
     public void cambiarPantalla(String nombrePantalla) {
@@ -60,16 +57,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("BK Reservas");
+        setMinimumSize(new java.awt.Dimension(660, 400));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGap(0, 667, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGap(0, 417, Short.MAX_VALUE)
         );
 
         pack();
