@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 public class ValidateEntry {
     String datoValidar;
 
+
     /**
      * Constructor genérico
      */
@@ -25,24 +26,38 @@ public class ValidateEntry {
      * @return True si coincide con el pattern establecido
      */
     public boolean esNombre(String datoValidar) {
-        String regex = "^([a-zA-Z]{2,}\\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\\s?([a-zA-Z]{1,})?)";
+        String regex = "^([a-zA-Z]{2,}\\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\\s?([a-zA-Z]+)?)";
         Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(datoValidar);
 
         return matcher.matches();
     }
-    //TODO
+
     /**
-     * Metodo que evalúa si la expresión es un teléfono
+     * Metodo que evalúa si la expresión es un teléfono (9 cifras sin espacios)
      *
      * @param datoValidar Expresión
      * @return True si coincide con el pattern establecido
      */
-    public boolean esNombre(String datoValidar) {
-        String regex = "^([a-zA-Z]{2,}\\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\\s?([a-zA-Z]{1,})?)";
+    public boolean esTelefono(String datoValidar) {
+        String regex = "\\d{9}";
         Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(datoValidar);
 
         return matcher.matches();
     }
 
+    /**
+     * Metodo que evalúa si la expresión es un número entre 1 y 999
+     *
+     * @param datoValidar Expresión
+     * @return True si coincide con el pattern establecido
+     */
+    public boolean esNumero(String datoValidar) {
+        String regex = "\\d{3}";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(datoValidar);
 
+        return matcher.matches();
+    }
 }
