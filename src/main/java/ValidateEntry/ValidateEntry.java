@@ -5,19 +5,16 @@ import java.util.regex.Pattern;
 
 /**
  * Clase que maneja la validación de los datos que introduce el usuario en un JTextField
+ * Es una clase de utilidad que no necesita ser instanciada y no necesiota constructor. Lo pongo en privado
  *
  * @author Cristina García
+ *
  */
 public class ValidateEntry {
-    String datoValidar;
-
-
     /**
-     * Constructor genérico
+     * Constructor genérico privado
      */
-    public ValidateEntry() {
-        this.datoValidar = "";
-    }
+    private ValidateEntry() {}
 
     /**
      * Metodo que evalúa si la expresión es un nombre
@@ -25,8 +22,8 @@ public class ValidateEntry {
      * @param datoValidar Expresión
      * @return True si coincide con el pattern establecido
      */
-    public boolean esNombre(String datoValidar) {
-        String regex = "^([a-zA-Z]{2,}\\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\\s?([a-zA-Z]+)?)";
+    public static boolean esNombre(String datoValidar) {
+        String regex = "^[a-zA-Z \\-\\.\\']*$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(datoValidar);
 
@@ -39,22 +36,8 @@ public class ValidateEntry {
      * @param datoValidar Expresión
      * @return True si coincide con el pattern establecido
      */
-    public boolean esTelefono(String datoValidar) {
+    public static boolean esTelefono(String datoValidar) {
         String regex = "\\d{9}";
-        Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(datoValidar);
-
-        return matcher.matches();
-    }
-
-    /**
-     * Metodo que evalúa si la expresión es un número entre 1 y 999
-     *
-     * @param datoValidar Expresión
-     * @return True si coincide con el pattern establecido
-     */
-    public boolean esNumero(String datoValidar) {
-        String regex = "\\d{3}";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(datoValidar);
 

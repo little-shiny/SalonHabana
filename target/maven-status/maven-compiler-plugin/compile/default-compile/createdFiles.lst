@@ -5,9 +5,11 @@ GUI\PanelPantallaReserva$1.class
 GUI\PanelPantallaReserva$4.class
 GUI\PanelInicio$1.class
 GUI\PanelContacto.class
-Main.class
+GUI\package-info.class
 GUI\PanelContacto$1.class
 GUI\PanelPantallaReserva$2.class
+GUI\PanelPantallaReserva$8.class
+ValidateEntry\package-info.class
 GUI\PanelInicio.class
 GUI\PanelInicio$2.class
 GUI\VentanaPrincipal.class
