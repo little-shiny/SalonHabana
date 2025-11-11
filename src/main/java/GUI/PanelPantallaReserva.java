@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package GUI;
-
+// todo Añadir verificacion regex
 import javax.swing.JOptionPane;
 /**
  * JPanel que se utilizará para introducir los datos de la reserva
