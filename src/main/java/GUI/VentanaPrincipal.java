@@ -1,7 +1,9 @@
 package GUI;
 
-import java.awt.CardLayout;
+import java.awt.*;
 import javax.swing.JPanel;
+import javax.swing.ImageIcon;
+import javax.imageio.*;
 
 /**
  * Clase que permite crear el "marco" donde aparecerán las diferentes pantallas del programa.
@@ -24,6 +26,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null); // Centra la ventana
         
+        //Establece el icono del Jframe
+        String pathImage = "/LogoBK.png";
+        this.setIconImage(new ImageIcon(pathImage).getImage());
+
+        try{
+            this.setIconImage(ImageIO.read(this.getClass().getResource("/LogoBK.png")));
+        }catch(Exception e){}
+
         // Crear los paneles
         panelContenedor = new JPanel();
         cardLayout = new CardLayout();
@@ -61,7 +71,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("BK Reservas");
+        setIconImages(null);
         setMinimumSize(new java.awt.Dimension(680, 550));
+        setName("Frame Principal"); // NOI18N
         setPreferredSize(new java.awt.Dimension(680, 550));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

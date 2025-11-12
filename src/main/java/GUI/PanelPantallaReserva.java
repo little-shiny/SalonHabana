@@ -65,16 +65,19 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
         if ("Congreso".equals(evento)){
             PanelDinamico.setVisible(true);
         }
+        else{
+            PanelDinamico.setVisible(false);
+        }
     }
     
     /**
-     * Método que cambia el color del fondo de un JTextField y muestra un tooltip de entrada incorrecta
+     * Metodo que cambia el color del fondo de un JTextField y muestra un tooltip de entrada incorrecta
      * 
      * @param javax.swing.JTextField Field que se desea modificar
      */
     private void cambiaFieldIncorrecto(javax.swing.JTextField field){
         field.setOpaque(true); //Permite mostrar el color rojo
-        field.setBackground(new Color(250, 128, 114)); // Rojo salmón
+        field.setBackground(new Color(245, 121, 107)); // Rojo salmón
         field.setText("Texto no válido");
         field.setToolTipText("Introduzca un texto válido");
     }
