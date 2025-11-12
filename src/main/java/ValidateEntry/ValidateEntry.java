@@ -4,17 +4,20 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Clase que maneja la validación de los datos que introduce el usuario en un JTextField
- * Es una clase de utilidad que no necesita ser instanciada y no necesiota constructor. Lo pongo en privado
+ * Clase que maneja la validación de los datos que introduce el usuario en un
+ * JTextField Es una clase de utilidad que no necesita ser instanciada y no
+ * necesiota constructor. Lo pongo en privado
  *
  * @author Cristina García
  *
  */
 public class ValidateEntry {
+
     /**
      * Constructor genérico privado
      */
-    private ValidateEntry() {}
+    private ValidateEntry() {
+    }
 
     /**
      * Metodo que evalúa si la expresión es un nombre

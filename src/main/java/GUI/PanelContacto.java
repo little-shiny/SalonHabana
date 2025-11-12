@@ -40,6 +40,7 @@ public class PanelContacto extends javax.swing.JPanel {
         btnVolverInicio = new javax.swing.JButton();
         jTextArea1 = new javax.swing.JTextArea();
 
+        btnVolverInicio.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         btnVolverInicio.setText("Volver al inicio");
         btnVolverInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -49,7 +50,7 @@ public class PanelContacto extends javax.swing.JPanel {
 
         jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
-        jTextArea1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jTextArea1.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 36)); // NOI18N
         jTextArea1.setRows(5);
         jTextArea1.setText("BK Eventos\nPuede encontrarnos en :\nCalle unacalle número 1\n00000 CuidadEjemplo\n\nTeléfono de contacto: 000 000 000");
 
@@ -74,7 +75,7 @@ public class PanelContacto extends javax.swing.JPanel {
                 .addComponent(btnVolverInicio)
                 .addGap(36, 36, 36)
                 .addComponent(jTextArea1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(103, Short.MAX_VALUE))
+                .addContainerGap(98, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

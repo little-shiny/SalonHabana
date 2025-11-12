@@ -6,59 +6,64 @@ import javax.swing.ImageIcon;
 import javax.imageio.*;
 
 /**
- * Clase que permite crear el "marco" donde aparecerán las diferentes pantallas del programa.
- * <p>Se utiliza cardLayout para hacer la transición</p>
+ * Clase que permite crear el "marco" donde aparecerán las diferentes pantallas
+ * del programa.
+ * <p>
+ * Se utiliza cardLayout para hacer la transición</p>
+ *
  * @author Cristina García Quintero
  */
-
 public class VentanaPrincipal extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName());
     private static JPanel panelContenedor;
     private static CardLayout cardLayout;
 
     /**
      * Constructor que inicializa el marco principal de la aplicación
-     * <p> También inicia el cardLayout que nos sirve para cambiar entre JPanels</p>
+     * <p>
+     * También inicia el cardLayout que nos sirve para cambiar entre JPanels</p>
      * JPanels
      */
     public VentanaPrincipal() {
         initComponents();
         setLocationRelativeTo(null); // Centra la ventana
-        
+
         //Establece el icono del Jframe
         String pathImage = "/LogoBK.png";
         this.setIconImage(new ImageIcon(pathImage).getImage());
 
-        try{
+        try {
             this.setIconImage(ImageIO.read(this.getClass().getResource("/LogoBK.png")));
-        }catch(Exception e){}
+        } catch (Exception e) {
+        }
 
         // Crear los paneles
         panelContenedor = new JPanel();
         cardLayout = new CardLayout();
-        
+
         panelContenedor.setLayout(cardLayout); // Establecemos la estructura de la ventana principal como un cardlayout
-        
+
         // Añadimos las "Pantallas" o paneles
         panelContenedor.add(new PanelInicio(this), "Inicio");
-        panelContenedor.add(new PanelPantallaReserva(this),"Reservar");
+        panelContenedor.add(new PanelPantallaReserva(this), "Reservar");
         panelContenedor.add(new PanelContacto(this), "Contacto");
-        
+
         // Añadimos el contenedor al Jframe
         this.setContentPane(panelContenedor);
-        
+
         // Mostrar la primera pantalla
         cardLayout.show(panelContenedor, "Inicio");
     }
+
     /**
      * método para cambiar de ventana
+     *
      * @param nombrePantalla nombre de la pantalla a la que se quiere cambiar
      */
     public void cambiarPantalla(String nombrePantalla) {
         cardLayout.show(panelContenedor, nombrePantalla);
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -55,9 +55,9 @@
               <Component id="btnVolverInicio" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
               <Component id="Titulo" min="-2" pref="62" max="-2" attributes="0"/>
-              <EmptySpace pref="15" max="32767" attributes="0"/>
+              <EmptySpace pref="13" max="32767" attributes="0"/>
               <Component id="tabPaneReserva" min="-2" pref="348" max="-2" attributes="0"/>
-              <EmptySpace pref="60" max="32767" attributes="0"/>
+              <EmptySpace pref="57" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -65,6 +65,9 @@
   <SubComponents>
     <Component class="javax.swing.JButton" name="btnVolverInicio">
       <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
+        </Property>
         <Property name="text" type="java.lang.String" value="Volver al inicio"/>
       </Properties>
       <Events>
@@ -74,7 +77,7 @@
     <Component class="javax.swing.JLabel" name="Titulo">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Segoe UI" size="36" style="1"/>
+          <Font name="Gloucester MT Extra Condensed" size="36" style="1"/>
         </Property>
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Sal&#xf3;n Habana"/>
@@ -84,9 +87,13 @@
     <Container class="javax.swing.JTabbedPane" name="tabPaneReserva">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-          <Border info="org.netbeans.modules.form.compat2.border.EmptyBorderInfo">
-            <EmptyBorder/>
+          <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+            <BevelBorder/>
           </Border>
+        </Property>
+        <Property name="focusable" type="boolean" value="false"/>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
         </Property>
       </Properties>
 
@@ -96,6 +103,9 @@
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Informaci&#xf3;n personal de la persona solicitante"/>
             <Property name="focusCycleRoot" type="boolean" value="true"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Gloucester MT Extra Condensed" size="14" style="0"/>
+            </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
@@ -125,7 +135,7 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="188" max="32767" attributes="0"/>
+                      <EmptySpace pref="224" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -144,7 +154,7 @@
                       </Group>
                       <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
                       <Component id="btnValidar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace pref="119" max="32767" attributes="0"/>
+                      <EmptySpace pref="108" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -153,7 +163,7 @@
             <Component class="javax.swing.JLabel" name="LabelNombre">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="1"/>
+                  <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Nombre y apellidos:"/>
               </Properties>
@@ -161,13 +171,16 @@
             <Component class="javax.swing.JLabel" name="LabelTlf">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="1"/>
+                  <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tel&#xe9;fono de contacto:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="FieldNombre">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Gloucester MT Extra Condensed" size="14" style="0"/>
+                </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Introduzca el texto aqu&#xed;"/>
               </Properties>
               <Events>
@@ -176,6 +189,9 @@
             </Component>
             <Component class="javax.swing.JTextField" name="FieldTlf">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Gloucester MT Extra Condensed" size="14" style="0"/>
+                </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Introduzca el texto aqu&#xed;"/>
               </Properties>
               <Events>
@@ -184,6 +200,9 @@
             </Component>
             <Component class="javax.swing.JButton" name="btnValidar">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Siguiente"/>
               </Properties>
               <Events>
@@ -195,6 +214,9 @@
         <Container class="javax.swing.JPanel" name="tabEvento">
           <Properties>
             <Property name="toolTipText" type="java.lang.String" value="Informaci&#xf3;n sobre la reserva"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Gloucester MT Extra Condensed" size="14" style="0"/>
+            </Property>
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
@@ -213,15 +235,18 @@
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                           <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="LabelFecha" min="-2" max="-2" attributes="0"/>
-                                  <Component id="LabelAsistentes" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="LabelAsistentes" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="FieldAsistentes" min="-2" pref="46" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="LabelFecha" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="SpinnerFecha" min="-2" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="SpinnerFecha" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
-                                  <Component id="FieldAsistentes" alignment="0" min="-2" pref="46" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="23" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="LabelEvento" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="LabelCocina" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -238,7 +263,7 @@
                           <Component id="ComboEvento" min="-2" max="-2" attributes="0"/>
                           <Component id="btnAceptar" min="-2" pref="105" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="50" max="32767" attributes="0"/>
+                      <EmptySpace pref="90" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -274,7 +299,7 @@
                               <Component id="RaidBtnNoPrecisa" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnAceptar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -284,6 +309,9 @@
           <SubComponents>
             <Component class="javax.swing.JSpinner" name="SpinnerFecha">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
+                </Property>
                 <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
                   <SpinnerModel initial="now" stepSize="5" type="date"/>
                 </Property>
@@ -293,13 +321,16 @@
             <Component class="javax.swing.JLabel" name="LabelFecha">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                  <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Fecha del evento: "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JComboBox" name="ComboEvento">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
+                </Property>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="3">
                     <StringItem index="0" value="Banquete"/>
@@ -319,7 +350,7 @@
             <Component class="javax.swing.JLabel" name="LabelEvento">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                  <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tipo de evento: "/>
               </Properties>
@@ -327,20 +358,23 @@
             <Component class="javax.swing.JLabel" name="LabelAsistentes">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                  <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="N&#xfa;mero de asistentes: "/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="FieldAsistentes">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
+                </Property>
                 <Property name="toolTipText" type="java.lang.String" value="Introduzca el n&#xfa;mero de asistentes al evento"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="LabelCocina">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Segoe UI" size="14" style="0"/>
+                  <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tipo de cocina:"/>
               </Properties>
@@ -349,6 +383,9 @@
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="btnGpCocina"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Buf&#xe9;"/>
                 <Property name="toolTipText" type="java.lang.String" value="Opci&#xf3;n de buf&#xe9; para todos los asistentes"/>
@@ -362,6 +399,9 @@
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="btnGpCocina"/>
                 </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Carta"/>
                 <Property name="toolTipText" type="java.lang.String" value="Opci&#xf3;n de carta para todos los asistentes"/>
               </Properties>
@@ -371,6 +411,9 @@
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="btnGpCocina"/>
                 </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Cita con el chef"/>
                 <Property name="toolTipText" type="java.lang.String" value="Cita con el chef"/>
               </Properties>
@@ -379,6 +422,9 @@
               <Properties>
                 <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
                   <ComponentRef name="btnGpCocina"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="No precisa"/>
                 <Property name="toolTipText" type="java.lang.String" value="Sin opci&#xf3;n de cocina"/>
@@ -431,7 +477,7 @@
                 <Component class="javax.swing.JLabel" name="LabelJornadas">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
+                      <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="&#xbf;Se requieren habitaciones?"/>
                   </Properties>
@@ -447,7 +493,7 @@
                 <Component class="javax.swing.JLabel" name="LabelJornadas1">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="14" style="0"/>
+                      <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="N&#xfa;mero de jornadas: "/>
                   </Properties>
@@ -455,13 +501,16 @@
                 <Component class="javax.swing.JLabel" name="LabelOpc">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Segoe UI" size="12" style="2"/>
+                      <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Opciones adicionales para congresos"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JSpinner" name="SpinnerJornadas">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
+                    </Property>
                     <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
                       <SpinnerModel initial="1" maximum="99" numberType="java.lang.Integer" stepSize="1" type="number"/>
                     </Property>
@@ -471,6 +520,12 @@
             </Container>
             <Component class="javax.swing.JButton" name="btnAceptar">
               <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="cc" green="ff" red="cc" type="rgb"/>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Gloucester MT Extra Condensed" size="18" style="0"/>
+                </Property>
                 <Property name="text" type="java.lang.String" value="Enviar"/>
               </Properties>
               <Events>

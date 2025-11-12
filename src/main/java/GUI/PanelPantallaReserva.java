@@ -3,6 +3,7 @@ package GUI;
 import ValidateEntry.*;
 import javax.swing.JOptionPane;
 import java.awt.*;
+
 /**
  * JPanel que se utilizará para introducir los datos de la reserva
  *
@@ -16,89 +17,92 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
     public PanelPantallaReserva() {
         initComponents();
     }
-    
+
     /**
-     * Constructor donde recibimos la referencia a la ventana de inicio
-     * Parent hace referencia a la ventana principal que está en ejecución y permite utilizar sus metodos y clases
+     * Constructor donde recibimos la referencia a la ventana de inicio Parent
+     * hace referencia a la ventana principal que está en ejecución y permite
+     * utilizar sus metodos y clases
      *
-     * <p>También se establecen los listeners de los botones que permiten volver al menú y actualizar el panel
-     * dinámico</p>
+     * <p>
+     * También se establecen los listeners de los botones que permiten volver al
+     * menú y actualizar el panel dinámico</p>
+     *
      * @param parent;
      */
-
     public PanelPantallaReserva(VentanaPrincipal parent) {
         initComponents();
-        
-        tabPaneReserva.setEnabledAt(1,false); //La segunda pestaña se desactiva al iniciar para forzar la validación de los datos
+
+        tabPaneReserva.setEnabledAt(1, false); //La segunda pestaña se desactiva al iniciar para forzar la validación de los datos
         PanelDinamico.setVisible(false); //Por defecto el panel dinámico no se ve
-        
-        
+
         // Añadimos el listener del botón aquí para asegurar que se liga a la instancia que se muestra
         btnVolverInicio.addActionListener(e -> {
             parent.cambiarPantalla("Inicio");
         });
-        
+
         // Listener para el botón de la validación de los datos de la persona
         btnValidar.addActionListener(e -> {
-           ValidaDatosCliente(); //Valida los datos del cliente
+            ValidaDatosCliente(); //Valida los datos del cliente
         });
-        
+
         // Creamos el listener del ComboBox para actualizar el panel dinámico y mostrar las opciones en función del tipo de evento seleccionado
         ComboEvento.addActionListener(e -> {
             String seleccion = (String) ComboEvento.getSelectedItem();
             ActualizarPanelDinamico(seleccion);
         });
-        
+
         //Listener para el botón de enviar la reserva. Muestra un mensaje para el usuario
         btnAceptar.addActionListener(e -> {
             JOptionPane.showMessageDialog(this, "Solicitud de reserva enviada");
             parent.cambiarPantalla("Inicio");
         });
     }
-    
+
     /**
-     * Metodo que evalúa la coincidencia con el elemento seleccionado en el comboBox para mostrar el panel dinámico
-     * si coincide con "Congreso"
+     * Metodo que evalúa la coincidencia con el elemento seleccionado en el
+     * comboBox para mostrar el panel dinámico si coincide con "Congreso"
+     *
      * @param evento Dato recogido del comboBox
      */
-    private void ActualizarPanelDinamico(String evento){
-        if ("Congreso".equals(evento)){
+    private void ActualizarPanelDinamico(String evento) {
+        if ("Congreso".equals(evento)) {
             PanelDinamico.setVisible(true);
-        }
-        else{
+        } else {
             PanelDinamico.setVisible(false);
         }
     }
-    
+
     /**
-     * Metodo que cambia el color del fondo de un JTextField y muestra un tooltip de entrada incorrecta
-     * 
+     * Metodo que cambia el color del fondo de un JTextField y muestra un
+     * tooltip de entrada incorrecta
+     *
      * @param javax.swing.JTextField Field que se desea modificar
      */
-    private void cambiaFieldIncorrecto(javax.swing.JTextField field){
+    private void cambiaFieldIncorrecto(javax.swing.JTextField field) {
         field.setOpaque(true); //Permite mostrar el color rojo
         field.setBackground(new Color(245, 121, 107)); // Rojo salmón
         field.setText("Texto no válido");
         field.setToolTipText("Introduzca un texto válido");
     }
-    
+
     /**
-     * Metodo que valida los datos del cliente introducidos en los campos de la primera tab del JTabbedPane y permite activar la segunda tab
+     * Metodo que valida los datos del cliente introducidos en los campos de la
+     * primera tab del JTabbedPane y permite activar la segunda tab
      */
-    private void ValidaDatosCliente(){
+    private void ValidaDatosCliente() {
         String nombre = FieldNombre.getText();
         String tlf = FieldTlf.getText();
-        
-        if((!ValidateEntry.esNombre(nombre)) || (!ValidateEntry.esTelefono(tlf))){
+
+        if ((!ValidateEntry.esNombre(nombre)) || (!ValidateEntry.esTelefono(tlf))) {
             cambiaFieldIncorrecto(FieldNombre);
             cambiaFieldIncorrecto(FieldTlf);
-        }
-        else{
-            tabPaneReserva.setEnabledAt(1,true); //Se activa la segunda pestaña
+        } else {
+            tabPaneReserva.setEnabledAt(1, true); //Se activa la segunda pestaña
             tabPaneReserva.setSelectedIndex(1); // Se mueve al usuario a la segunda pestaña
         }
-    }     
-/**
+    }
+
+    /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
      * regenerated by the Form Editor.
@@ -141,6 +145,7 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
         setName(""); // NOI18N
         setPreferredSize(new java.awt.Dimension(680, 520));
 
+        btnVolverInicio.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         btnVolverInicio.setText("Volver al inicio");
         btnVolverInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,22 +153,26 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
             }
         });
 
-        Titulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        Titulo.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 1, 36)); // NOI18N
         Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Titulo.setText("Salón Habana");
         Titulo.setAlignmentX(1.0F);
 
-        tabPaneReserva.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        tabPaneReserva.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        tabPaneReserva.setFocusable(false);
+        tabPaneReserva.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
 
         tabInfoPersonal.setToolTipText("Información personal de la persona solicitante");
         tabInfoPersonal.setFocusCycleRoot(true);
+        tabInfoPersonal.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
 
-        LabelNombre.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LabelNombre.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         LabelNombre.setText("Nombre y apellidos:");
 
-        LabelTlf.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LabelTlf.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         LabelTlf.setText("Teléfono de contacto:");
 
+        FieldNombre.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
         FieldNombre.setToolTipText("Introduzca el texto aquí");
         FieldNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -171,6 +180,7 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
             }
         });
 
+        FieldTlf.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
         FieldTlf.setToolTipText("Introduzca el texto aquí");
         FieldTlf.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -178,6 +188,7 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
             }
         });
 
+        btnValidar.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         btnValidar.setText("Siguiente");
         btnValidar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,7 +212,7 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
                         .addGroup(tabInfoPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(FieldTlf, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(FieldNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(188, Short.MAX_VALUE))
+                .addContainerGap(224, Short.MAX_VALUE))
         );
         tabInfoPersonalLayout.setVerticalGroup(
             tabInfoPersonalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,19 +227,22 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
                     .addComponent(FieldTlf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(51, 51, 51)
                 .addComponent(btnValidar)
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
 
         tabPaneReserva.addTab("Información personal", null, tabInfoPersonal, "");
 
         tabEvento.setToolTipText("Información sobre la reserva");
+        tabEvento.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 14)); // NOI18N
 
+        SpinnerFecha.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         SpinnerFecha.setModel(new javax.swing.SpinnerDateModel());
         SpinnerFecha.setToolTipText("Introduzca la fecha y la hora deseada de inicio del evento");
 
-        LabelFecha.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelFecha.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         LabelFecha.setText("Fecha del evento: ");
 
+        ComboEvento.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         ComboEvento.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Banquete", "Jornada", "Congreso" }));
         ComboEvento.setToolTipText("Especifique el tipo de evento que desee");
         ComboEvento.addActionListener(new java.awt.event.ActionListener() {
@@ -237,18 +251,20 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
             }
         });
 
-        LabelEvento.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelEvento.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         LabelEvento.setText("Tipo de evento: ");
 
-        LabelAsistentes.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelAsistentes.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         LabelAsistentes.setText("Número de asistentes: ");
 
+        FieldAsistentes.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         FieldAsistentes.setToolTipText("Introduzca el número de asistentes al evento");
 
-        LabelCocina.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelCocina.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         LabelCocina.setText("Tipo de cocina:");
 
         btnGpCocina.add(RaidBtnBufe);
+        RaidBtnBufe.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         RaidBtnBufe.setText("Bufé");
         RaidBtnBufe.setToolTipText("Opción de bufé para todos los asistentes");
         RaidBtnBufe.addActionListener(new java.awt.event.ActionListener() {
@@ -258,18 +274,21 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
         });
 
         btnGpCocina.add(RaidBtnCarta);
+        RaidBtnCarta.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         RaidBtnCarta.setText("Carta");
         RaidBtnCarta.setToolTipText("Opción de carta para todos los asistentes");
 
         btnGpCocina.add(RaidBtnCitaChef);
+        RaidBtnCitaChef.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         RaidBtnCitaChef.setText("Cita con el chef");
         RaidBtnCitaChef.setToolTipText("Cita con el chef");
 
         btnGpCocina.add(RaidBtnNoPrecisa);
+        RaidBtnNoPrecisa.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         RaidBtnNoPrecisa.setText("No precisa");
         RaidBtnNoPrecisa.setToolTipText("Sin opción de cocina");
 
-        LabelJornadas.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelJornadas.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         LabelJornadas.setText("¿Se requieren habitaciones?");
 
         CheckboxHab.setToolTipText("Especifique si se necesitan habitaciones para el evento");
@@ -279,12 +298,13 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
             }
         });
 
-        LabelJornadas1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        LabelJornadas1.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         LabelJornadas1.setText("Número de jornadas: ");
 
-        LabelOpc.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        LabelOpc.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         LabelOpc.setText("Opciones adicionales para congresos");
 
+        SpinnerJornadas.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         SpinnerJornadas.setModel(new javax.swing.SpinnerNumberModel(1, null, 99, 1));
 
         javax.swing.GroupLayout PanelDinamicoLayout = new javax.swing.GroupLayout(PanelDinamico);
@@ -320,6 +340,8 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
                 .addGap(41, 41, 41))
         );
 
+        btnAceptar.setBackground(new java.awt.Color(204, 255, 204));
+        btnAceptar.setFont(new java.awt.Font("Gloucester MT Extra Condensed", 0, 18)); // NOI18N
         btnAceptar.setText("Enviar");
         btnAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -336,13 +358,15 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
                 .addGroup(tabEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(tabEventoLayout.createSequentialGroup()
                         .addGroup(tabEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelFecha)
-                            .addComponent(LabelAsistentes))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(tabEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(SpinnerFecha, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(FieldAsistentes, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23)
+                            .addGroup(tabEventoLayout.createSequentialGroup()
+                                .addComponent(LabelAsistentes)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(FieldAsistentes, javax.swing.GroupLayout.PREFERRED_SIZE, 46, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(tabEventoLayout.createSequentialGroup()
+                                .addComponent(LabelFecha)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(SpinnerFecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(32, 32, 32)
                         .addGroup(tabEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(LabelEvento)
                             .addComponent(LabelCocina)))
@@ -355,7 +379,7 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
                     .addComponent(RaidBtnBufe)
                     .addComponent(ComboEvento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(50, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         tabEventoLayout.setVerticalGroup(
             tabEventoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -386,7 +410,7 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
                         .addComponent(RaidBtnNoPrecisa)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(btnAceptar)
-                        .addGap(32, 32, 32))))
+                        .addGap(47, 47, 47))))
         );
 
         tabPaneReserva.addTab("Peticiones para la reserva", null, tabEvento, "Datos e la reserva del salón");
@@ -415,9 +439,9 @@ public class PanelPantallaReserva extends javax.swing.JPanel {
                 .addComponent(btnVolverInicio)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
                 .addComponent(tabPaneReserva, javax.swing.GroupLayout.PREFERRED_SIZE, 348, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(60, Short.MAX_VALUE))
+                .addContainerGap(57, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
