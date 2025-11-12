@@ -1,7 +1,7 @@
 package GUI;
 
 /**
- * Clase GUI.Main de nuestra aplicación. Inicia el método que arranca la interfaz gráfica
+ * Clase GUI.Main de nuestra aplicación. Inicia el metodo que arranca la interfaz gráfica
  * @author Cristina García Quintero
  */
 public class Main {
