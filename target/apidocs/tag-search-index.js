@@ -1,0 +1,1 @@
+tagSearchIndex = [{"l":"Otras mejoras implementadas","h":"Overview","d":"Section","u":"index.html#otras-mejoras-implementadas-heading"},{"l":"SalonHabana: DI01 DAM","h":"Overview","d":"Section","u":"index.html#salonhabana-di01-dam-heading"},{"l":"Serialized Form","h":"","u":"serialized-form.html"}];updateSearchResults();
