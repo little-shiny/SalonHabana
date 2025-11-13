@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Descripción general del proyecto</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+          line-height: 1.6;
+        }
+        h1 {
+          color: #2c3e50;
+        }
+        .info {
+          background: #ecf0f1;
+          padding: 10px;
+          border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+<h1>SalonHabana: DI01 DAM</h1>
+<p>
+    Este proyecto se ha creado para resolver el ejercicio propuesto en Desarrollo de Interfaces de DAM.
+
+    El proyecto consta de una interfaz gráfica mediante la cual el usuario puede solicitar una reserva de un salón de
+    eventos con diferentes opciones y características.
+    Consta de una interfaz que utilizando un CardLayout se muestran diferentes JPanels con el contenido para el
+    usuario mediante la navegación guiada con botones.
+
+    El proyecto contiene tres JPanels principales:
+</p>
+    <ul>
+    <li><b>Panel de inicio:</b> en él se muestran dos botones para navegar a los otros dos paneles</li>
+    <lI><b>Panel de reservas:</b> permiten al usuario introducir sus datos personales con una validación de los mismos
+        y acceder a una pestaña con los datos de la reserva como el tipo del evento, los invitados, el tipo de
+            comida... Para los cuales se han utilizado diferentes elementos de Java Swing como los RaidButtons o
+            los Spinners.</lI>
+    <li><b>Panel de contacto:</b> se mostrarían los datos de contacto de la empresa junto con un botón que permite
+    volver al menú principal</li>
+    </ul>
+<h2>Otras mejoras implementadas</h2>
+<p>
+    Se han añadido otras mejoras como son el paquete <b>ValidateEntry</b>, que contiene ciertas clases para validar
+    las entradas del usuario y que no permitan escribir letras en el número de teléfono, por ejemplo. Se han
+    utilizado expresiones regulares para ello.
+
+    Además, para poder mostrar y ocultar las opciones adicionales cuando el usuario selecciona la opción de
+    "congreso" he creado lo que he llamado "panel dinámico", que básicamente oculta y activa el contenido en función
+    de la selección del RaidButton.
+</p>
+
+
+<div class="info">
+    <p><b>Autor:</b> Cristina García Quintero</p>
+    <p><b>Versión:</b> 1.0</p>
+    <p><b>Última actualización:</b> 13 de Noviembre de 2025</p>
+</div>
+</body>
+</html>

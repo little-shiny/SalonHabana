@@ -2,15 +2,15 @@
 -J-Duser.country=
 @options
 @packages
-@argfile
---no-fonts
 -classpath
 'C:/Users/mim0x/.m2/repository/org/netbeans/external/AbsoluteLayout/RELEASE270/AbsoluteLayout-RELEASE270.jar'
 -encoding
 'UTF-8'
+-overview
+'C:/Users/mim0x/Documents/dev/NetBeans/SalonHabana/src/main/java/overview.html'
 -protected
 --release
-24
+23
 -sourcepath
 'C:/Users/mim0x/Documents/dev/NetBeans/SalonHabana/src/main/java'
 -author
@@ -19,36 +19,35 @@
 -charset
 'UTF-8'
 -d
-'C:/Users/mim0x/Documents/dev/NetBeans/SalonHabana/target/reports/apidocs'
+'C:/Users/mim0x/Documents/dev/NetBeans/SalonHabana/target/site/apidocs'
 -docencoding
 'UTF-8'
 -doctitle
-'SalonHabana 1.0-SNAPSHOT API'
+'Documentación API - SalonHabana'
 -use
 -version
 -windowtitle
-'SalonHabana 1.0-SNAPSHOT API'
+'SalonHabana API'
 GUI
-'C:/Users/mim0x/Documents/dev/NetBeans/SalonHabana/src/main/java/Main.java'
+JavaDocLauncher
+ValidateEntry
 C:\Users\mim0x\.m2\repository\org\netbeans\external\AbsoluteLayout\RELEASE270\AbsoluteLayout-RELEASE270.jar = 1762803944631
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\src\main\java\Main.java = 1762810780683
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\src\main\java = 1762429514295
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\allclasses-index.html = 1762811132782
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\allpackages-index.html = 1762811132783
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\element-list = 1762811132732
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\help-doc.html = 1762811132794
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\index-all.html = 1762811132789
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\index.html = 1762811132777
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\Main.html = 1762811132628
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\member-search-index.js = 1762811132785
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\module-search-index.js = 1762811132783
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\overview-summary.html = 1762811132792
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\overview-tree.html = 1762811132775
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\package-search-index.js = 1762811132784
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\package-summary.html = 1762811132737
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\package-tree.html = 1762811132739
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\package-use.html = 1762811132772
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\search.html = 1762811132790
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\serialized-form.html = 1762811132761
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\tag-search-index.js = 1762811132785
-C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\reports\apidocs\type-search-index.js = 1762811132784
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\src\main\java\abrirReadme.jar = 1763039556830
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\src\main\java\manifest.txt = 1763036836602
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\src\main\java\overview.html = 1763039025344
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\src\main\java = 1763039556831
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\site\apidocs\allclasses-index.html = 1763039640137
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\site\apidocs\allpackages-index.html = 1763039640138
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\site\apidocs\element-list = 1763039640077
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\site\apidocs\help-doc.html = 1763039640148
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\site\apidocs\index-all.html = 1763039640145
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\site\apidocs\index.html = 1763039640130
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\site\apidocs\member-search-index.js = 1763039640140
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\site\apidocs\module-search-index.js = 1763039640139
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\site\apidocs\overview-summary.html = 1763039640147
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\site\apidocs\overview-tree.html = 1763039640123
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\site\apidocs\package-search-index.js = 1763039640139
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\site\apidocs\search.html = 1763039640146
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\site\apidocs\serialized-form.html = 1763039640106
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\site\apidocs\tag-search-index.js = 1763039640141
+C:\Users\mim0x\Documents\dev\NetBeans\SalonHabana\target\site\apidocs\type-search-index.js = 1763039640140
